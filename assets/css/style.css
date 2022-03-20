@@ -1,0 +1,54 @@
+/* The header goes at the top of the page, and remains there during scrolling.  */
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* The list of links is displayed left-to-right at the right side of the page.  */
+.links  {
+    list-style-type: none;
+    float: right;
+}
+
+.links > li {
+    display: inline-block;
+    text-align: center;
+    padding-right: 10px;
+}
+
+/* Make my name stand out.  */
+.name {
+    font-size: 50px;
+    float: left;
+}
+
+/* Place the main body of the text below the header.  */
+#main {
+    margin-top: 110px;
+}
+
+/* Each section in main has a title on the left and other material on
+ * the right.  */
+.main_section {
+    display: flex;
+    flex-direction: row;
+}
+
+.main_section > img {
+    margin: 5px;
+    width: 100px;
+}
+
+.main_section > p {
+    text-align: justify; 
+}
+
+/* Place the section titles in large type, and leave room for the largest,
+ * so the description paragraphs line up.  */
+.title > p {
+    margin-right: 20px;
+    font-size: 25px;
+    width: 125px;
+}
