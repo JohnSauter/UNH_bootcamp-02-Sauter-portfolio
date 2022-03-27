@@ -1,7 +1,23 @@
+/* Define our color scheme.  */
+:root {
+  --unselected-foreground: rgb(230,183,135); /* powder blue */
+  --unselected-background: rgb(53, 6, 99); /* west coast */
+  --selected-foreground: rgb(71, 17, 95); /* scarlet gum */
+  --selected-background: rgb(202, 208, 101); /* Tacha */
+  --link-foreground: white;
+}
+
+/* Selected items change color.  */
+::selection {
+    background-color: var(--selected-background);
+    color: var(--selected-foreground);
+}
+
 /* The header goes at the top of the page, and 
  * remains there during scrolling.  */
 header {
-    background-color: white;
+    background: var(--unselected-background);
+    color: var(--unselected-foreground);
     position: fixed;
     top: 0;
     width: 100%;
@@ -15,9 +31,14 @@ header {
 }
 
 .links > li {
+    color: var(--unselected-foreground);
     display: inline-block;
     text-align: center;
     padding-right: 10px;
+}
+
+.links > li > a {
+    color: var(--link-foreground);
 }
 
 /* Make my name stand out.  */
@@ -29,6 +50,12 @@ header {
 /* Place the main body of the text below the header.  */
 #main {
     margin-top: 110px;
+    background: var(--unselected-background);
+    color: var(--unselected-foreground);
+}
+
+#main a {
+    color: var(--link-foreground);
 }
 
 /* Each section in main has a title on the left and 
@@ -59,16 +86,32 @@ header {
 /* Within the portfolio section, the items appear from
  * left to right, wrapping onto multiple lines as needed.
  */
- .portfolio-section {
-    display:flex;
-    flex-wrap:wrap;
+ .portfolio-row {
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
  }
 
- .portfolio-section > li {
-    flex: 1 0 200px;
+ .portfolio-column {
+    flex: 1 0 100%;
+    transition: flex-basis 500ms linear;
+ }
+
+ .portfolio-column > li {
+     display: flex;
+     flex-direction: column;
     padding: 10px;
     text-align:justify;
     border-style:solid;
     border-width:1px;
     list-style-type:none;
+    transition: all 0.5s ease-in-out;
+ }
+
+/* Wide screens get more information in less vertical space.  */
+ @media screen and (min-width: 768px) {
+     .portfolio-column {
+         flex: 1 1 25%;
+         max-width: 100%;
+     }
  }
