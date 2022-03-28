@@ -24,14 +24,13 @@ header {
 }
 
 /* The list of links is displayed left-to-right 
-* at the right side of the page.  */
+* at the top right side of the page.  */
 .links  {
     list-style-type: none;
     float: right;
 }
 
 .links > li {
-    color: var(--unselected-foreground);
     display: inline-block;
     text-align: center;
     padding-right: 10px;
@@ -39,6 +38,11 @@ header {
 
 .links > li > a {
     color: var(--link-foreground);
+}
+
+body {
+    min-height: 100%;
+    background: var(--unselected-background);
 }
 
 /* Make my name stand out.  */
@@ -50,7 +54,6 @@ header {
 /* Place the main body of the text below the header.  */
 #main {
     margin-top: 110px;
-    background: var(--unselected-background);
     color: var(--unselected-foreground);
 }
 
@@ -59,7 +62,7 @@ header {
 }
 
 /* Each section in main has a title on the left and 
-* other material on the right.  */
+ * other material on the right.  */
 .main_section {
     display: flex;
     flex-direction: row;
@@ -92,26 +95,49 @@ header {
      flex-direction: row;
  }
 
+ /* Assume a small screen and use just one column.  We will use
+  * media queries to adjust for a wider screen.  */
  .portfolio-column {
-    flex: 1 0 100%;
-    transition: flex-basis 500ms linear;
- }
-
- .portfolio-column > li {
-     display: flex;
-     flex-direction: column;
     padding: 10px;
-    text-align:justify;
     border-style:solid;
     border-width:1px;
-    list-style-type:none;
-    transition: all 0.5s ease-in-out;
+    flex: 1 0 100%;
+    transition: flex-basis 1000ms linear;
  }
 
-/* Wide screens get more information in less vertical space.  */
+ /* Boxes with long URLs need more space.  */
+.portfolio-wide {
+    min-width: 300px;
+}
+
+ .portfolio-item > img {
+     float: left;
+     margin-right: 5px;
+     width:50px;
+ }
+
+ .portfolio-item > p {
+     display:inline;
+     text-align: justify;
+ }
+
+/* Wide screens get two items per column.  */
  @media screen and (min-width: 768px) {
      .portfolio-column {
-         flex: 1 1 25%;
-         max-width: 100%;
+         flex: 0 0 50%;
+         max-width: 50%;
+     }
+     
+     .portfolio-column:last-child {
+         flex-grow: 1;
+     }
+     
+ }
+
+ /* Even wider screens get three.  */
+ @media screen and (min-width: 992px) {
+     .portfolio-column {
+         flex: 0 0 33.333%;
+         max-width: 33.333%;
      }
  }
