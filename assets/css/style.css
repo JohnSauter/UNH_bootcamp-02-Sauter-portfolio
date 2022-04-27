@@ -1,9 +1,1 @@
 /* Define our color scheme.  */
-:root {
-    --card-width: 20rem; /* The width of the portfolio cards */
-  }
-  
-  header {
-      z-index: 10; /* Keep the header visible while scrolling.  */
-  }
-  
