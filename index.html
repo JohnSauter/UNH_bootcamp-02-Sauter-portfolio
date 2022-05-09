@@ -18,7 +18,7 @@
         <ul class="dropdown menu" data-dropdown-menu>
           <li class="menu-text">John Sauter</li>
           <li><a href="#">Home</a></li>
-          <li><a href="#">About Me</a></li>
+          <li><a href="#about_me">About Me</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#contact_me">Contact Me</a></li>
@@ -31,7 +31,7 @@
     <main>
       <div class="grid-container">
 
-        <section id="work" class="grid-x"> <!-- about me -->
+        <section id="about_me" class="grid-x"> <!-- about me -->
           <div class="cell small-2 large-1">About Me:</div>
           <div class="cell small-8 large-10">
             <p>I am an experienced computer programmer who understands the
@@ -44,9 +44,9 @@
               alt="Picture of John Sauter"
               width="100px">
           </div>
-        </section> <!-- row: about me -->
+        </section> <!-- about me -->
 
-        <section class="grid-x" id="work"> <!-- work -->
+        <section id="work" class="grid-x"> <!-- work -->
           <div class="cell small-2 large-1">Work:</div>
           <div class="cell small-10 large-11">
             <p>With over 50 years of experience in the computer industry, my
@@ -90,75 +90,91 @@
                   Nashua, NH  03063-4066
                 </li>
             </ul>
+          </div> <!-- contact me contents -->
         </section>  <!-- contact me -->
 
-        <section class="grid-x"> <!-- portfolio -->
+        <section id="portfolio" class="grid-x"> <!-- portfolio -->
           <div class="cell small-2 large-1">Portfolio:</div>
-            <div class="cell small-10 large-11">
-              <div class="grid-container">
-              <div class="grid-x">
+          <div class="cell small-10 large-11">
+            <ul class="tabs" data-tabs id="portfolio-tabs">
+              <li class="tabs-title is-active">
+                <a href="#portfolio-01" aria-selected="true">
+                  Horiseon
+                </a>
+              </li>
+              <li class="tabs-title">
+                <a data-tabs-target="portfolio-02" href="#portfolio-02">
+                  System Eyes Computer Store
+                </a>
+              </li>
+              <li class="tabs-title">
+                <a data-tabs-target="portfolio-03" href="#portfolio-03">
+                  Filler 01
+                </a>
+              </li>
+            </ul>
+          </div> <!-- portfolio contents -->
+        </section> <!-- portfolio -->
 
-                <div class="cell small-12 medium-6 large-4">
-                  <div class="card">
-                    <div class="card-divider">
-                      <h5>Horiseon</h5>
-                    </div>
-                    <img src="./assets/images/Horiseon.png" 
-                      alt="screenshot of Horiseon web site">
-                    <div class="card-section">
-                      <p>
-                        As a class exercise in the UNH coding bootcamp, we were asked
-                        to improve the accessibility of a web page, and
-                        in the process to correct minor errors and improve
-                        its maintainability.  The source code is on github
-                        at <a href="https://github.com/JohnSauter/UNH_bootcamp-01-Sauter-Horiseon">
-                        https://github.com/JohnSauter/UNH_bootcamp-01-Sauter-Horiseon</a>
-                        and the web site is at <a href="https://johnsauter.github.io/UNH_bootcamp-01-Sauter-Horiseon/">
-                        https://johnsauter.github.io/UNH_bootcamp-01-Sauter-Horiseon/</a>.
-                      </p>                       
-                    </div> <!-- card section -->
-                  </div> <!-- card -->
-                </div> <!-- cell -->
+        <section class="small-12 tabs-content" data-tabs-content="portfolio-tabs">
+          <div class="tabs-panel is-active" id="portfolio-01">
+            <div class="card">
+              <div class="card-divider">
+                <h5>Horiseon</h5>
+              </div>
+              <img src="./assets/images/Horiseon.png" 
+                alt="screenshot of Horiseon web site">
+              <div class="card-section">
+                <p>
+                  As a class exercise in the UNH coding bootcamp, we were asked
+                  to improve the accessibility of a web page, and
+                  in the process to correct minor errors and improve
+                  its maintainability.  The source code is on github
+                  at <a href="https://github.com/JohnSauter/UNH_bootcamp-01-Sauter-Horiseon">
+                  https://github.com/JohnSauter/UNH_bootcamp-01-Sauter-Horiseon</a>
+                  and the web site is at <a href="https://johnsauter.github.io/UNH_bootcamp-01-Sauter-Horiseon/">
+                  https://johnsauter.github.io/UNH_bootcamp-01-Sauter-Horiseon/</a>.
+                </p>                       
+              </div> <!-- card section -->
+            </div> <!-- card -->
+          </div> <!-- portfolio-01 -->
 
-                <div class="cell small-12 medium-6 large-4">
-                  <div class="card">
-                    <div class="card-divider">
-                      <h5>Personal web site</h5>
-                    </div>
-                    <img src="./assets/images/registration_document_1024.png"
-                      alt="Trademark registration for System Eyes Computer Store">
-                    <div class="card-section">
-                      <p>
-                        In the early days of the World Wide Web, if you had pages
-                        you wished to include in the web, you connected your computer
-                        to the internet and ran an http server on port 80.
-                        I continue to maintain my personal web site using a computer
-                        in my home at this URL: 
-                        <a href="https://www.systemeyescomputerstore.com">https://www.systemeyescomputerstore.com</a>.
-                      </p>
-                    </div> <!-- card section -->
-                  </div> <!-- card -->
-                </div> <!-- cell -->
+          <div class="tabs-panel" id="portfolio-02">              
+            <div class="card">
+              <div class="card-divider">
+                <h5>Personal web site</h5>
+              </div>
+              <img src="./assets/images/registration_document_1024.png"
+                alt="Trademark registration for System Eyes Computer Store">
+              <div class="card-section">
+                <p>
+                  In the early days of the World Wide Web, if you had pages
+                  you wished to include in the web, you connected your computer
+                  to the internet and ran an http server on port 80.
+                  I continue to maintain my personal web site using a computer
+                  in my home at this URL: 
+                  <a href="https://www.systemeyescomputerstore.com">https://www.systemeyescomputerstore.com</a>.
+                </p>
+              </div> <!-- card section -->
+            </div> <!-- card -->
+          </div> <!-- portfolio-02 -->
 
-                <div class="cell small-12 medium-6 large-4">
-                  <div class="card">
-                    <div class="card-divider">
-                      <h5>Filler</h5>
-                    </div>
-                    <img src="./assets/images/John_headshot_2007_12_200_200.png"
-                       alt="Picture of John Sauter">
-                    <div class="card-section">
-                      <p>
-                        This card will be replaced by real content.
-                      </p>
-                    </div> <!-- card section -->
-                  </div> <!-- card -->
-                </div> <!-- cell -->
+          <div class="tabs-panel" id="portfolio-03">
+            <div class="card">
+              <div class="card-divider">
+                <h5>Filler</h5>
+              </div>
+              <img src="./assets/images/John_headshot_2007_12_200_200.png"
+                alt="Picture of John Sauter">
+              <div class="card-section">
+                <p>
+                  This card will be replaced by real content.
+                </p>
+              </div> <!-- card section -->
+            </div> <!-- card -->
+          </div> <!-- portfolio-03 -->
 
-              </div> <!-- grid-x -->
-            </div> <!-- grid-container -->
-          </div> <!-- grid-x -->
-        </section> <!-- grid-x: portfolio -->
+        </section> <!-- tabs-content --> 
       </div> <!-- grid container -->
     </main>
    
